@@ -34,7 +34,7 @@ export default function Home() {
         <div className="relative h-full grid grid-cols-12 gap-4 px-6 py-6 md:px-12 lg:px-16">
           {/* Hero Text - Bottom Left */}
           <div className="col-span-12 md:col-span-8 lg:col-span-7 self-end pb-6 md:pb-8 lg:pb-10">
-            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
+            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.0]">
               {line1.map((word, index) => (
                 <motion.span
                   key={`line1-${index}`}
@@ -47,7 +47,7 @@ export default function Home() {
                   initial={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
                   animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                   transition={{
-                    duration: 1.7,
+                    duration: 3.0,
                     delay: 0.2 + index * 0.08,
                     ease: [0.16, 1, 0.3, 1]
                   }}
@@ -68,7 +68,7 @@ export default function Home() {
                   initial={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
                   animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                   transition={{
-                    duration: 1.7,
+                    duration: 3.0,
                     delay: 0.2 + (line1.length + index) * 0.08,
                     ease: [0.16, 1, 0.3, 1]
                   }}
@@ -84,7 +84,7 @@ export default function Home() {
             className="col-span-12 md:col-span-4 lg:col-span-5 self-end pb-6 md:pb-8 lg:pb-10 flex justify-end"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-white text-xl md:text-2xl">Scroll Down</p>
           </motion.div>
