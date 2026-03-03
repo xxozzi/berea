@@ -57,11 +57,10 @@ const categories = [
 ];
 
 export default function Photoreel() {
-  const [currentIndex, setCurrentIndex] = useState(0); // Start at first image
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const totalImages = carouselData.length; // 5 images
+  const totalImages = carouselData.length;
 
-  // Detect mobile screen size
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -90,7 +89,6 @@ export default function Photoreel() {
 
   return (
     <section className="relative w-full bg-[#1a1a1a] py-[90px] px-4 md:px-12 lg:px-[100px]">
-      {/* Category Navigation - Top Right of Section */}
       <motion.div
         className="absolute top-[90px] right-[100px] hidden md:flex flex-col gap-0"
         initial={{ opacity: 0, x: 10 }}
@@ -113,7 +111,6 @@ export default function Photoreel() {
         ))}
       </motion.div>
 
-      {/* Section Label */}
       <motion.div
         className="mb-8 md:mb-0"
         initial={{ opacity: 0, y: 10 }}
@@ -129,7 +126,6 @@ export default function Photoreel() {
         </p>
       </motion.div>
 
-      {/* Main Heading */}
       <motion.h2
         className="text-white text-3xl md:text-4xl lg:text-[52px] leading-[1.2] max-w-[680px] mb-[60px]"
         style={{ fontFamily: 'var(--font-mori)' }}
@@ -141,7 +137,6 @@ export default function Photoreel() {
         The views of Berea are where artistic inspiration lives.
       </motion.h2>
 
-      {/* Carousel Container */}
       <motion.div
         className="overflow-hidden mb-[40px]"
         initial={{ opacity: 0, scale: 0.95 }}
@@ -166,7 +161,6 @@ export default function Photoreel() {
         </div>
       </motion.div>
 
-      {/* Navigation Arrows */}
       <motion.div
         className="flex gap-[14px] mb-[50px]"
         initial={{ opacity: 0, y: 10 }}
@@ -174,7 +168,6 @@ export default function Photoreel() {
         viewport={{ once: true }}
         transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* Previous Button */}
         <button
           onClick={handlePrev}
           disabled={isAtStart}
@@ -203,7 +196,6 @@ export default function Photoreel() {
           </svg>
         </button>
 
-        {/* Next Button */}
         <button
           onClick={handleNext}
           disabled={isAtEnd}
@@ -233,7 +225,6 @@ export default function Photoreel() {
         </button>
       </motion.div>
 
-      {/* Image Credits - Below Carousel */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentItem.id}

@@ -10,7 +10,6 @@ export default function Resources() {
     <main className="min-h-screen bg-white">
       <Navbar variant="dark" />
 
-      {/* Hero Section */}
       <section className="relative w-full bg-white px-4 md:px-12 lg:px-[100px] py-16 md:py-24 lg:py-32">
         <Suspense fallback={
           <div className="text-center py-16">

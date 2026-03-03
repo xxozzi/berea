@@ -76,9 +76,7 @@ export default function TSAPage() {
     <main className="min-h-screen bg-white">
       <Navbar variant="dark" />
 
-      {/* Hero Section */}
       <section className="relative w-full bg-white px-4 md:px-12 lg:px-[100px] py-16 md:py-24 lg:py-32">
-        {/* Section Label */}
         <motion.div
           className="mb-8"
           initial={{ opacity: 0, y: 10 }}
@@ -93,7 +91,6 @@ export default function TSAPage() {
           </p>
         </motion.div>
 
-        {/* Main Heading */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.2] mb-12">
           {headingSegments.map((segment, index) => (
             <motion.span
@@ -117,7 +114,6 @@ export default function TSAPage() {
           ))}
         </h1>
 
-        {/* Description */}
         <motion.p
           className="text-[#888888] text-lg md:text-xl leading-relaxed max-w-3xl mb-16"
           style={{ fontFamily: 'var(--font-mori)' }}
@@ -133,7 +129,6 @@ export default function TSAPage() {
           and connect the community with valuable resources.
         </motion.p>
 
-        {/* School Info */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 10 }}
@@ -148,7 +143,6 @@ export default function TSAPage() {
           </p>
         </motion.div>
 
-        {/* Team Members */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 10 }}
@@ -178,7 +172,6 @@ export default function TSAPage() {
           </div>
         </motion.div>
 
-        {/* Resources Section */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -199,12 +192,10 @@ export default function TSAPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.5 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
-                {/* Icon */}
                 <div className="text-[#FF6B35] mb-4 transition-colors duration-300">
                   {resource.icon}
                 </div>
 
-                {/* Title */}
                 <h3
                   className="text-xl font-bold text-black mb-3 group-hover:text-[#FF6B35] transition-colors duration-300"
                   style={{ fontFamily: 'var(--font-mori)' }}
@@ -212,7 +203,6 @@ export default function TSAPage() {
                   {resource.title}
                 </h3>
 
-                {/* Description */}
                 <p
                   className="text-sm text-gray-600 leading-relaxed"
                   style={{ fontFamily: 'var(--font-mori)' }}
@@ -220,7 +210,6 @@ export default function TSAPage() {
                   {resource.description}
                 </p>
 
-                {/* Arrow Icon */}
                 <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
                   <svg
                     width="20"

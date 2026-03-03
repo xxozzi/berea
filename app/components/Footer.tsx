@@ -15,7 +15,6 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-[#FF6200] px-4 md:px-12 lg:px-[100px] py-16 md:py-20 lg:py-24">
       <div className="grid grid-cols-12 gap-8 mb-12">
-        {/* Left Column - Branding */}
         <motion.div
           className="col-span-12 md:col-span-4"
           initial={{ opacity: 0, y: 10 }}
@@ -34,7 +33,6 @@ export default function Footer() {
           </Link>
         </motion.div>
 
-        {/* Center Column - Navigation */}
         <motion.div
           className="col-span-12 md:col-span-4"
           initial={{ opacity: 0, y: 10 }}
@@ -66,7 +64,6 @@ export default function Footer() {
           </nav>
         </motion.div>
 
-        {/* Right Column - Connect */}
         <motion.div
           className="col-span-12 md:col-span-4"
           initial={{ opacity: 0, y: 10 }}
@@ -83,7 +80,6 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* Bottom Bar - Copyright & Credit */}
       <motion.div
         className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
         initial={{ opacity: 0 }}

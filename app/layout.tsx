@@ -16,8 +16,8 @@ const ppEditorial = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Berca - Folk art and Sustainability Hub",
-  description: "Where art meets the Earth",
+  title: "Berea - Folk art and Sustainability Hub",
+  description: "Serving the underserved.",
 };
 
 export default function RootLayout({

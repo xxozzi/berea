@@ -12,20 +12,18 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
   const pathname = usePathname();
 
   useEffect(() => {
-    // If not on home page, always show hamburger
     if (pathname !== '/') {
       setShowHamburger(true);
       return;
     }
 
-    // On home page, show hamburger based on scroll
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const halfViewport = window.innerHeight / 2;
       setShowHamburger(scrollY > halfViewport);
     };
 
-    handleScroll(); // Check initial state
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
@@ -42,7 +40,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
 
   return (
     <>
-      {/* Regular Navbar */}
       <motion.nav
         className="fixed top-0 left-0 right-0 z-50 px-6 pt-6 md:px-12 md:pt-8 lg:px-16 lg:pt-10"
         initial={{ y: -10, opacity: 0 }}
@@ -54,7 +51,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-start justify-between">
-          {/* Logo */}
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={startAnimations ? { y: 0, opacity: 1 } : {}}
@@ -71,7 +67,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
             </Link>
           </motion.div>
 
-          {/* Nav Items */}
           <div className={`hidden md:flex gap-8 lg:gap-12 text-xl md:text-2xl ${variant === 'dark' ? 'text-black' : 'text-white'}`}>
             {navItems.map((item, index) => (
               <motion.a
@@ -89,7 +84,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
         </div>
       </motion.nav>
 
-      {/* Hamburger Menu Button */}
       <AnimatePresence>
         {showHamburger && (
           <motion.button
@@ -128,7 +122,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
         )}
       </AnimatePresence>
 
-      {/* Backdrop */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -142,7 +135,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
         )}
       </AnimatePresence>
 
-      {/* Slideout Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -153,7 +145,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex flex-col h-full p-8 pt-24">
-              {/* Logo */}
               <div className="mb-12">
                 <Link href="/#hero" className="cursor-pointer" onClick={closeMenu}>
                   <Image
@@ -166,7 +157,6 @@ export default function Navbar({ variant = 'light', startAnimations = true }: { 
                 </Link>
               </div>
 
-              {/* Nav Items */}
               <nav className="flex flex-col gap-6">
                 {navItems.map((item, index) => (
                   <motion.a

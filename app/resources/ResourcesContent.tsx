@@ -28,7 +28,6 @@ export default function ResourcesContent() {
     { text: 'vibrant community.', color: '#000000' },
   ];
 
-  // Load resources from JSON file
   useEffect(() => {
     fetch('/resources.json')
       .then(response => response.json())
@@ -42,7 +41,6 @@ export default function ResourcesContent() {
       });
   }, []);
 
-  // Apply tag filter from URL parameter
   useEffect(() => {
     const tagParam = searchParams.get('tag');
     if (tagParam && resourcesData.length > 0) {
@@ -50,7 +48,6 @@ export default function ResourcesContent() {
     }
   }, [searchParams, resourcesData]);
 
-  // Get all unique tags
   const allTags = useMemo(() => {
     const tags = new Set<string>();
     resourcesData.forEach(resource => {
@@ -59,7 +56,6 @@ export default function ResourcesContent() {
     return Array.from(tags).sort();
   }, [resourcesData]);
 
-  // Toggle tag selection
   const toggleTag = (tag: string) => {
     setSelectedTags(prev =>
       prev.includes(tag)
@@ -68,21 +64,17 @@ export default function ResourcesContent() {
     );
   };
 
-  // Clear all filters
   const clearFilters = () => {
     setSelectedTags([]);
     setSearchQuery('');
   };
 
-  // Filter resources
   const filteredResources = useMemo(() => {
     return resourcesData.filter(resource => {
-      // Search filter
       const matchesSearch = searchQuery === '' ||
         resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         resource.description.toLowerCase().includes(searchQuery.toLowerCase());
 
-      // Tag filter
       const matchesTags = selectedTags.length === 0 ||
         resource.tags.some(tag => selectedTags.includes(tag));
 
@@ -92,7 +84,6 @@ export default function ResourcesContent() {
 
   return (
     <>
-      {/* Section Label */}
       <motion.div
         className="mb-8"
         initial={{ opacity: 0, y: 10 }}
@@ -107,7 +98,6 @@ export default function ResourcesContent() {
         </p>
       </motion.div>
 
-      {/* Main Heading */}
       <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.2] mb-12">
         {headingSegments.map((segment, index) => (
           <motion.span
@@ -131,7 +121,6 @@ export default function ResourcesContent() {
         ))}
       </h1>
 
-      {/* Description */}
       <motion.p
         className="text-[#888888] text-lg md:text-xl leading-relaxed max-w-3xl mb-8"
         style={{ fontFamily: 'var(--font-mori)' }}
@@ -143,7 +132,6 @@ export default function ResourcesContent() {
         that make Berea the Folk Arts Capital of Kentucky.
       </motion.p>
 
-      {/* Contribution CTA */}
       <motion.p
         className="text-[#888888] text-base md:text-lg leading-relaxed max-w-3xl mb-16"
         style={{ fontFamily: 'var(--font-mori)' }}
@@ -163,7 +151,6 @@ export default function ResourcesContent() {
         {' '}to let us know.
       </motion.p>
 
-      {/* Loading State */}
       {isLoading ? (
         <motion.div
           className="text-center py-16"
@@ -177,7 +164,6 @@ export default function ResourcesContent() {
         </motion.div>
       ) : (
         <>
-          {/* Search Bar */}
           <motion.div
             className="mb-8"
             initial={{ opacity: 0, y: 10 }}
@@ -194,7 +180,6 @@ export default function ResourcesContent() {
             />
           </motion.div>
 
-          {/* Tag Filters */}
           <motion.div
             className="mb-8 flex flex-wrap gap-3"
             initial={{ opacity: 0, y: 10 }}
@@ -228,7 +213,6 @@ export default function ResourcesContent() {
             ))}
           </motion.div>
 
-          {/* Results Count */}
           <motion.p
             className="text-[#888888] text-sm mb-6"
             style={{ fontFamily: 'var(--font-mori)' }}
@@ -239,7 +223,6 @@ export default function ResourcesContent() {
             Showing {filteredResources.length} {filteredResources.length === 1 ? 'resource' : 'resources'}
           </motion.p>
 
-          {/* Resource Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredResources.map((resource, index) => (
               <motion.a
@@ -252,7 +235,6 @@ export default function ResourcesContent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
               >
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {resource.tags.map((tag) => (
                     <span
@@ -265,7 +247,6 @@ export default function ResourcesContent() {
                   ))}
                 </div>
 
-                {/* Title */}
                 <h3
                   className="text-xl font-bold text-black mb-3 group-hover:text-[#FF6B35] transition-colors duration-300"
                   style={{ fontFamily: 'var(--font-mori)' }}
@@ -273,7 +254,6 @@ export default function ResourcesContent() {
                   {resource.title}
                 </h3>
 
-                {/* Description */}
                 <p
                   className="text-sm text-gray-600 leading-relaxed"
                   style={{ fontFamily: 'var(--font-mori)' }}
@@ -281,7 +261,6 @@ export default function ResourcesContent() {
                   {resource.description}
                 </p>
 
-                {/* Arrow Icon */}
                 <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
                   <svg
                     width="20"
@@ -304,7 +283,6 @@ export default function ResourcesContent() {
             ))}
           </div>
 
-          {/* No Results Message */}
           {filteredResources.length === 0 && (
             <motion.div
               className="text-center py-16"

@@ -41,7 +41,6 @@ export default function ResourceHub() {
   return (
     <section className="relative w-full bg-white py-16 md:py-24 lg:py-32">
       <div className="px-[100px]">
-        {/* Section Label */}
         <motion.div
           className="mb-6"
           initial={{ opacity: 0, y: 10 }}
@@ -57,7 +56,6 @@ export default function ResourceHub() {
           </p>
         </motion.div>
 
-        {/* Main Heading */}
         <motion.h2
           className="text-black text-4xl md:text-5xl leading-[1.2] mb-12"
           style={{ fontFamily: 'var(--font-mori)' }}
@@ -69,7 +67,6 @@ export default function ResourceHub() {
           Explore our selection of local organizations
         </motion.h2>
 
-        {/* Three Column Grid with Hover Expansion */}
         <motion.div
           className="flex gap-6"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -81,12 +78,11 @@ export default function ResourceHub() {
             const isHovered = hoveredCard === card.id;
             const isOtherHovered = hoveredCard !== null && hoveredCard !== card.id;
 
-            // Calculate width based on hover state
-            let width = '33.33%'; // Default equal width
+            let width = '33.33%';
             if (isHovered) {
-              width = '50%'; // Expanded
+              width = '50%';
             } else if (isOtherHovered) {
-              width = '25%'; // Shrunk
+              width = '25%';
             }
 
             return (
@@ -101,7 +97,6 @@ export default function ResourceHub() {
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Background Image */}
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
@@ -110,12 +105,9 @@ export default function ResourceHub() {
                   }}
                 />
 
-                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                {/* Content */}
                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
-                  {/* Title */}
                   <h3
                     className="text-white text-2xl md:text-3xl font-bold mb-2"
                     style={{ fontFamily: 'var(--font-mori)' }}
@@ -123,7 +115,6 @@ export default function ResourceHub() {
                     {card.title}
                   </h3>
 
-                  {/* Description - Only visible when hovered */}
                   {card.description && (
                     <p
                       className="text-white text-sm md:text-base mb-4"
@@ -137,7 +128,6 @@ export default function ResourceHub() {
                     </p>
                   )}
 
-                  {/* Button */}
                   <button
                     className="bg-white text-black text-xs md:text-sm font-medium uppercase tracking-wide px-6 py-3 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
                     style={{ fontFamily: 'var(--font-mori)' }}

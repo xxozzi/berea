@@ -46,20 +46,15 @@ export default function Home() {
       <main className="min-h-screen">
         <Navbar startAnimations={startAnimations} />
 
-      {/* Hero Section */}
       <section id="hero" className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/images/potter.png)' }}
         />
 
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Content Grid */}
         <div className="relative h-full grid grid-cols-12 gap-4 px-6 py-6 md:px-12 lg:px-16">
-          {/* Hero Text - Bottom Left */}
           <div className="col-span-12 md:col-span-8 lg:col-span-7 self-end pb-6 md:pb-8 lg:pb-10">
             <h1 className="text-white text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.0]">
               {line1.map((word, index) => (
@@ -106,7 +101,6 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Scroll Down - Bottom Right */}
           <motion.div
             className="col-span-12 md:col-span-4 lg:col-span-5 self-end pb-6 md:pb-8 lg:pb-10 flex justify-end items-center gap-2"
             initial={{ opacity: 0, y: 10 }}
@@ -141,12 +135,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section - Desktop Version */}
       <section id="about" className="relative w-full bg-[#FAF9F6] py-16 md:py-24 lg:py-32">
         <div className="hidden md:grid grid-cols-12 gap-4 px-4 md:px-12 lg:px-[100px]">
-          {/* Left Column - Section Label & Description */}
           <div className="md:col-span-4 flex flex-col justify-between min-h-[500px]">
-            {/* Section Label */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +152,6 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Description Text */}
             <motion.p
               className="text-[#888888] text-sm md:text-base leading-relaxed max-w-[250px]"
               style={{ fontFamily: 'var(--font-mori)' }}
@@ -174,9 +164,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          {/* Right Column - Main Content */}
           <div className="md:col-span-8 flex flex-col justify-between min-h-[500px]">
-            {/* Main Heading */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.2]">
               {aboutHeading.map((segment, index) => (
                 <motion.span
@@ -202,7 +190,6 @@ export default function Home() {
               ))}
             </h2>
 
-            {/* CTA Button Group */}
             <Link href="/resources">
               <motion.div
                 className="flex items-center justify-start group cursor-pointer"
@@ -237,9 +224,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Version */}
         <div className="flex flex-col md:hidden px-4 gap-8">
-          {/* Section Label */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +239,6 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Main Heading */}
           <h2 className="text-3xl leading-[1.2]">
             {aboutHeading.map((segment, index) => (
               <motion.span
@@ -280,7 +264,6 @@ export default function Home() {
             ))}
           </h2>
 
-          {/* CTA Button Group */}
           <Link href="/resources">
             <motion.div
               className="flex items-center justify-start group cursor-pointer"
@@ -313,7 +296,6 @@ export default function Home() {
           </motion.div>
           </Link>
 
-          {/* Description Text */}
           <motion.p
             className="text-[#888888] text-sm leading-relaxed"
             style={{ fontFamily: 'var(--font-mori)' }}
@@ -327,14 +309,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photoreel Carousel Section */}
       <section id="gallery">
         <Photoreel />
       </section>
 
-      {/* Resource Hub Section */}
       <section className="relative w-full bg-white px-4 md:px-12 lg:px-[100px] py-16 md:py-24 lg:py-32">
-        {/* Section Label */}
         <motion.div
           className="mb-8"
           initial={{ opacity: 0, y: 10 }}
@@ -350,7 +329,6 @@ export default function Home() {
           </p>
         </motion.div>
 
-        {/* Heading */}
         <motion.h2
           className="text-4xl md:text-5xl text-black mb-12"
           style={{ fontFamily: 'var(--font-mori)' }}
@@ -362,11 +340,9 @@ export default function Home() {
           Explore our selection of local organizations
         </motion.h2>
 
-        {/* Three-Column Grid with Hover Expansion */}
         <ResourceGrid />
       </section>
 
-      {/* Footer Section */}
       <Footer />
     </main>
     </>
@@ -377,7 +353,6 @@ function ResourceGrid() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile screen size
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -413,7 +388,6 @@ function ResourceGrid() {
   ];
 
   const getGridColumns = () => {
-    // On mobile, always return equal columns
     if (isMobile) return '1fr';
 
     if (hoveredCard === 1) return '1.5fr 0.75fr 0.75fr';
@@ -450,10 +424,8 @@ function ResourceGrid() {
               viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.3 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Dark gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-              {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
                 <h3
                   className="text-2xl md:text-3xl font-bold mb-4"

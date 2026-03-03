@@ -34,22 +34,19 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       setProgress(newProgress);
 
       if (loadedCount === totalAssets) {
-        // Wait a brief moment to show 100%, then start fade out
         setTimeout(() => {
           setIsComplete(true);
-          // Notify parent after fade animation starts
           setTimeout(() => {
             onLoadingComplete();
-          }, 300); // Start hero animation during fadeout
+          }, 300);
         }, 200);
       }
     };
 
-    // Preload all images
     imagesToPreload.forEach((src) => {
       const img = new Image();
       img.onload = updateProgress;
-      img.onerror = updateProgress; // Count errors as loaded to prevent hanging
+      img.onerror = updateProgress;
       img.src = src;
     });
   }, [onLoadingComplete]);
@@ -63,7 +60,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Logo or Site Name */}
           <motion.div
             className="mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +74,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
             </h1>
           </motion.div>
 
-          {/* Progress Bar */}
           <motion.div
             className="w-64 md:w-80 h-1 bg-gray-200 rounded-full overflow-hidden mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -93,7 +88,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
             />
           </motion.div>
 
-          {/* Percentage */}
           <motion.p
             className="text-[#888888] text-lg"
             style={{ fontFamily: 'var(--font-mori)' }}
@@ -104,7 +98,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
             {progress}%
           </motion.p>
 
-          {/* Loading Text */}
           <motion.p
             className="text-[#888888] text-sm mt-2"
             style={{ fontFamily: 'var(--font-mori)' }}
