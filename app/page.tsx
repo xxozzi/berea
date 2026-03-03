@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Photoreel from './components/Photoreel';
 import LoadingScreen from './components/LoadingScreen';
+import Footer from './components/Footer';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -202,35 +203,37 @@ export default function Home() {
             </h2>
 
             {/* CTA Button Group */}
-            <motion.div
-              className="flex items-center justify-start group cursor-pointer"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <button className="px-6 py-3 md:px-8 md:py-4 border-2 border-black rounded-full text-black text-base transition-all duration-300 hover:bg-black hover:text-white cursor-pointer" style={{ fontFamily: 'var(--font-mori)' }}>
-                View the Directory
-              </button>
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-black rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
-                >
-                  <path
-                    d="M5 15L15 5M15 5H7M15 5V13"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
-                  />
-                </svg>
-              </div>
-            </motion.div>
+            <Link href="/resources">
+              <motion.div
+                className="flex items-center justify-start group cursor-pointer"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <button className="px-6 py-3 md:px-8 md:py-4 border-2 border-black rounded-full text-black text-base transition-all duration-300 hover:bg-black hover:text-white cursor-pointer" style={{ fontFamily: 'var(--font-mori)' }}>
+                  View the Directory
+                </button>
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-black rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
+                  >
+                    <path
+                      d="M5 15L15 5M15 5H7M15 5V13"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="square"
+                      strokeLinejoin="miter"
+                    />
+                  </svg>
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
 
@@ -278,25 +281,26 @@ export default function Home() {
           </h2>
 
           {/* CTA Button Group */}
-          <motion.div
-            className="flex items-center justify-start group cursor-pointer"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <button className="px-6 py-3 border-2 border-black rounded-full text-black text-base transition-all duration-300 hover:bg-black hover:text-white cursor-pointer" style={{ fontFamily: 'var(--font-mori)' }}>
-              View the Directory
-            </button>
-            <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
-              >
+          <Link href="/resources">
+            <motion.div
+              className="flex items-center justify-start group cursor-pointer"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <button className="px-6 py-3 border-2 border-black rounded-full text-black text-base transition-all duration-300 hover:bg-black hover:text-white cursor-pointer" style={{ fontFamily: 'var(--font-mori)' }}>
+                View the Directory
+              </button>
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
+                >
                 <path
                   d="M5 15L15 5M15 5H7M15 5V13"
                   stroke="white"
@@ -307,6 +311,7 @@ export default function Home() {
               </svg>
             </div>
           </motion.div>
+          </Link>
 
           {/* Description Text */}
           <motion.p
@@ -362,87 +367,7 @@ export default function Home() {
       </section>
 
       {/* Footer Section */}
-      <footer className="relative w-full bg-[#FF6200] px-4 md:px-12 lg:px-[100px] py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-12 gap-8 mb-12">
-          {/* Left Column - Branding */}
-          <motion.div
-            className="col-span-12 md:col-span-4"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Image
-              src="/images/logo.svg"
-              alt="Berea - Folk Arts & Sustainability Hub"
-              width={160}
-              height={90}
-              className="w-36 md:w-40 lg:w-44 h-auto"
-            />
-          </motion.div>
-
-          {/* Center Column - Navigation */}
-          <motion.div
-            className="col-span-12 md:col-span-4"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h4 className="text-white text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'var(--font-mori)' }}>
-              Explore
-            </h4>
-            <nav className="flex flex-col gap-3">
-              {['About', 'Resources', 'Gallery', 'Contact'].map((link, index) => (
-                <motion.a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className="text-white/90 text-lg md:text-xl hover:text-white transition-colors duration-300"
-                  style={{ fontFamily: 'var(--font-mori)' }}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.0, delay: 0.3 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  {link}
-                </motion.a>
-              ))}
-            </nav>
-          </motion.div>
-
-          {/* Right Column - Connect */}
-          <motion.div
-            className="col-span-12 md:col-span-4"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h4 className="text-white text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'var(--font-mori)' }}>
-              Connect
-            </h4>
-            <p className="text-white/90 text-lg md:text-xl leading-relaxed" style={{ fontFamily: 'var(--font-mori)' }}>
-              Connecting communities through art, sustainability, and shared heritage.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Bottom Bar - Copyright & Credit */}
-        <motion.div
-          className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="text-white/80 text-base md:text-lg" style={{ fontFamily: 'var(--font-mori)' }}>
-            © 2026 Berea Folk Arts & Sustainability Hub
-          </p>
-          <p className="text-white/80 text-base md:text-lg" style={{ fontFamily: 'var(--font-mori)' }}>
-            A project by students at Paul Laurence Dunbar High School
-          </p>
-        </motion.div>
-      </footer>
+      <Footer />
     </main>
     </>
   );

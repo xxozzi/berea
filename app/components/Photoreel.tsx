@@ -46,20 +46,6 @@ const carouselData: CarouselItem[] = [
     title: 'Rock Formations',
     photographer: 'u/geologylover',
     source: 'Flickr'
-  },
-  {
-    id: 6,
-    image: '/images/berea6.png',
-    title: 'Historic Downtown',
-    photographer: 'u/bereacollective',
-    source: 'Instagram'
-  },
-  {
-    id: 7,
-    image: '/images/berea7.png',
-    title: 'Scenic Overlook',
-    photographer: 'u/kylandscapes',
-    source: 'Reddit'
   }
 ];
 
@@ -71,11 +57,9 @@ const categories = [
 ];
 
 export default function Photoreel() {
-  const [currentIndex, setCurrentIndex] = useState(7); // Start at middle set
-  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0); // Start at first image
   const [isMobile, setIsMobile] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const totalImages = carouselData.length * 3; // 21 total images
+  const totalImages = carouselData.length; // 5 images
 
   // Detect mobile screen size
   useEffect(() => {
@@ -89,53 +73,20 @@ export default function Photoreel() {
   }, []);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => {
-      // Prevent going below 0
-      if (prev <= 0) return 0;
-      return prev - 1;
-    });
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => {
-      // Prevent going above 20
-      if (prev >= 20) return 20;
-      return prev + 1;
-    });
+    if (currentIndex < totalImages - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
   };
 
-  // Handle seamless looping
-  useEffect(() => {
-    // Clear any existing timeout
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    // When we reach the boundaries, instantly reset to middle position
-    if (currentIndex === 0) {
-      // At start, jump to second set after transition
-      timeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(7);
-        setTimeout(() => setIsTransitioning(true), 50);
-      }, 400);
-    } else if (currentIndex === 20) {
-      // At end, jump to second set after transition
-      timeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(13);
-        setTimeout(() => setIsTransitioning(true), 50);
-      }, 400);
-    }
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [currentIndex]);
-
-  const currentItem = carouselData[currentIndex % carouselData.length];
+  const isAtStart = currentIndex === 0;
+  const isAtEnd = currentIndex === totalImages - 1;
+  const currentItem = carouselData[currentIndex];
 
   return (
     <section className="relative w-full bg-[#1a1a1a] py-[90px] px-4 md:px-12 lg:px-[100px]">
@@ -202,12 +153,12 @@ export default function Photoreel() {
           className="flex gap-[24px]"
           style={{
             transform: `translateX(-${currentIndex * (isMobile ? 304 : 724)}px)`,
-            transition: isTransitioning ? 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)' : 'none'
+            transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
           }}
         >
-          {[...carouselData, ...carouselData, ...carouselData].map((item, index) => (
+          {carouselData.map((item) => (
             <div
-              key={`${item.id}-${index}`}
+              key={item.id}
               className="w-[280px] md:w-[700px] h-[187px] md:h-[467px] rounded-[10px] flex-shrink-0 bg-center bg-cover"
               style={{ backgroundImage: `url(${item.image})` }}
             />
@@ -226,8 +177,13 @@ export default function Photoreel() {
         {/* Previous Button */}
         <button
           onClick={handlePrev}
-          className="w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center transition-all duration-200 hover:bg-[#F5F5F5] hover:scale-105 active:scale-95 cursor-pointer"
-          style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
+          disabled={isAtStart}
+          className={`w-[46px] h-[46px] rounded-full flex items-center justify-center transition-all duration-200 ${
+            isAtStart
+              ? 'bg-gray-300 cursor-not-allowed'
+              : 'bg-white hover:bg-[#F5F5F5] hover:scale-105 active:scale-95 cursor-pointer'
+          }`}
+          style={{ boxShadow: isAtStart ? 'none' : '0 2px 8px rgba(0,0,0,0.15)' }}
           aria-label="Previous image"
         >
           <svg
@@ -239,7 +195,7 @@ export default function Photoreel() {
           >
             <path
               d="M12 4L6 10L12 16"
-              stroke="#1a1a1a"
+              stroke={isAtStart ? "#999999" : "#1a1a1a"}
               strokeWidth="2"
               strokeLinecap="square"
               strokeLinejoin="miter"
@@ -250,8 +206,13 @@ export default function Photoreel() {
         {/* Next Button */}
         <button
           onClick={handleNext}
-          className="w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center transition-all duration-200 hover:bg-[#F5F5F5] hover:scale-105 active:scale-95 cursor-pointer"
-          style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
+          disabled={isAtEnd}
+          className={`w-[46px] h-[46px] rounded-full flex items-center justify-center transition-all duration-200 ${
+            isAtEnd
+              ? 'bg-gray-300 cursor-not-allowed'
+              : 'bg-white hover:bg-[#F5F5F5] hover:scale-105 active:scale-95 cursor-pointer'
+          }`}
+          style={{ boxShadow: isAtEnd ? 'none' : '0 2px 8px rgba(0,0,0,0.15)' }}
           aria-label="Next image"
         >
           <svg
@@ -263,7 +224,7 @@ export default function Photoreel() {
           >
             <path
               d="M8 4L14 10L8 16"
-              stroke="#1a1a1a"
+              stroke={isAtEnd ? "#999999" : "#1a1a1a"}
               strokeWidth="2"
               strokeLinecap="square"
               strokeLinejoin="miter"

@@ -23,8 +23,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       '/images/berea3.png',
       '/images/berea4.png',
       '/images/berea5.png',
-      '/images/berea6.png',
-      '/images/berea7.png',
     ];
 
     let loadedCount = 0;

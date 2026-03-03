@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function TSAPage() {
   const headingSegments = [
@@ -243,6 +244,8 @@ export default function TSAPage() {
           </div>
         </motion.div>
       </section>
+
+      <Footer />
     </main>
   );
 }

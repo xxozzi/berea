@@ -3,6 +3,7 @@
 import { Suspense } from 'react';
 import Navbar from '../components/Navbar';
 import ResourcesContent from './ResourcesContent';
+import Footer from '../components/Footer';
 
 export default function Resources() {
   return (
@@ -21,6 +22,8 @@ export default function Resources() {
           <ResourcesContent />
         </Suspense>
       </section>
+
+      <Footer />
     </main>
   );
 }
