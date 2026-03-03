@@ -1,0 +1,332 @@
+[
+  {
+    "tags": ["nourishment"],
+    "title": "Berea Food Bank (Berea Faith Community Outreach)",
+    "link": "https://bereaoutreach.org/berea-food-bank",
+    "description": "An emergency food assistance program providing a week's worth of groceries to residents of Berea and southern Madison County. It directly provides nourishment to individuals and families facing food insecurity."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Berea Baptist Church Food Closet",
+    "link": "https://www.bereabaptistchurch.org/",
+    "description": "A faith-based food pantry that provides supplemental food baskets to families in Berea. It serves as a vital nourishment resource for local residents."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Hope Food Pantry",
+    "link": "https://www.foodpantries.org/li/hope-food-pantry-40475",
+    "description": "Located in nearby Richmond, this pantry provides Madison County residents with direct access to an assortment of food and toiletries, fulfilling essential nourishment needs."
+  },
+  {
+    "tags": ["nourishment", "shelter"],
+    "title": "Salvation Army of Richmond",
+    "link": "https://salvationarmyusa.org/",
+    "description": "Provides a food pantry, free community meals, and emergency disaster services. It relates to nourishment through its food programs and shelter through its emergency housing assistance."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "God's Outreach Madison County Food Bank",
+    "link": "https://godsoutreach.org/",
+    "description": "Offers supplemental food assistance to residents of Madison County once a month, serving as a critical pillar for community nourishment."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Appalachian Community Meal Project",
+    "link": "https://www.facebook.com/AppalachianCommunityMealProject/",
+    "description": "A grassroots initiative connecting neighbors through community meals and neighborhood food pantries to ensure everyone has access to nourishment."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "CELTS Better Together Food Drive",
+    "link": "https://www.berea.edu/celts",
+    "description": "A community event hosted by Berea College's Center for Excellence in Learning through Service to raise funds and collect food for the Berea Food Bank, fighting food insecurity and providing nourishment."
+  },
+  {
+    "tags": ["nourishment", "finearts/arts"],
+    "title": "Sustainable Berea & Berea Urban Farm",
+    "link": "https://www.sustainableberea.org/",
+    "description": "A community urban farm that grows fresh food (nourishment) and hosts the Agri-Culture Garden, which preserves the cultural stories and heritage of local food plants (a living art form)."
+  },
+  {
+    "tags":["nourishment"],
+    "title": "Walmart Supercenter Berea",
+    "link": "https://www.walmart.com/store/1183-berea-ky",
+    "description": "A major local grocery store providing fresh produce, dry goods, and everyday nourishment staples to the Berea community."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Save A Lot Berea",
+    "link": "https://savealot.com/",
+    "description": "A discount grocery store in Berea offering affordable fresh food, meat, and pantry items to help families maintain nourishment on a budget."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Food Lion Berea",
+    "link": "https://www.foodlion.com/",
+    "description": "A local supermarket offering a wide variety of fresh food, baked goods, and household groceries to ensure daily nourishment."
+  },
+  {
+    "tags":["nourishment"],
+    "title": "Meijer Richmond",
+    "link": "https://www.meijer.com/",
+    "description": "A large regional supermarket located in nearby Richmond that supplies fresh produce, meats, and comprehensive grocery options for community nourishment."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Kroger Richmond",
+    "link": "https://www.kroger.com/",
+    "description": "A primary supermarket serving the Madison County area with fresh groceries, a pharmacy, and essential nourishment supplies."
+  },
+  {
+    "tags": ["nourishment", "finearts/arts"],
+    "title": "MásGusto Mexican Grocery",
+    "link": "https://masgusto.com/",
+    "description": "A grocery delivery service offering authentic Mexican and Latin American ingredients, providing both nourishment and a connection to the culinary arts of Latin cultures."
+  },
+  {
+    "tags": ["nourishment", "finearts/arts"],
+    "title": "Weee! Asian Grocery Delivery",
+    "link": "https://www.sayweee.com/",
+    "description": "Delivers authentic Japanese, Chinese, Korean, and Filipino groceries to Berea, offering diverse nourishment and celebrating the culinary arts of Asian cultures."
+  },
+  {
+    "tags": ["nourishment"],
+    "title": "Berea Farmers Market",
+    "link": "https://www.bereafarmersmarket.org/",
+    "description": "A year-round local market where regional farmers sell fresh produce, meats, and baked goods, directly connecting the community with healthy nourishment."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Room in the Inn Berea",
+    "link": "https://www.ritiberea.org/",
+    "description": "A seasonal emergency shelter program that provides a safe, warm place to sleep for individuals experiencing homelessness in Berea during the winter months."
+  },
+  {
+    "tags":["shelter", "nourishment"],
+    "title": "UP Initiative of Madison County",
+    "link": "https://www.facebook.com/UPMadisonCounty/",
+    "description": "A drop-in warming and cooling center in Berea that offers shelter from the elements, alongside a clothing closet, laundry service, and food pantry (nourishment)."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Madison Home",
+    "link": "https://madisonhome.org/",
+    "description": "A seasonal emergency shelter in Richmond that provides overnight housing, job training, and addiction treatment resources for those without shelter."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Madison County Haven of Hope",
+    "link": "https://havenofhopeky.com/",
+    "description": "A year-round emergency shelter serving Madison County, providing immediate housing support and resources to vulnerable populations."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "New Liberty Family Shelter",
+    "link": "https://kyhousing.org/",
+    "description": "A designated shelter facility in Richmond specifically designed to house and support families with children who are experiencing homelessness."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Beacon of Hope Emergency Shelter",
+    "link": "https://beaconofhopeky.org/",
+    "description": "Located in nearby Winchester, this shelter provides a safe and supportive housing environment for homeless individuals and families to rebuild their lives."
+  },
+  {
+    "tags": ["shelter", "nourishment"],
+    "title": "HOPE Center",
+    "link": "https://www.hopectr.org/",
+    "description": "A comprehensive facility offering emergency shelter, recovery programs, and daily meals (nourishment) to those facing homelessness in the broader Central Kentucky area."
+  },
+  {
+    "tags": ["shelter", "nourishment"],
+    "title": "Catholic Action Center",
+    "link": "https://www.catholicactioncenter.net/",
+    "description": "A 24-hour shelter providing lodging, food (nourishment), clothing, and laundry services to those in need, operating with no government funding."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Hope's Wings",
+    "link": "https://hopeswings.org/",
+    "description": "A domestic violence program in Madison County that provides emergency housing and safe shelter for individuals fleeing abuse."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "GreenHouse17",
+    "link": "https://greenhouse17.org/",
+    "description": "An advocacy agency and emergency shelter supporting survivors of domestic violence in the region, offering safe housing and crisis intervention."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Kentucky River Foothills Development Council",
+    "link": "https://foothillscap.org/",
+    "description": "Provides housing assistance, including the Eastern Scholar House program in Richmond which offers affordable housing and childcare for single parents pursuing education."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Berea Home Village",
+    "link": "https://www.bereahomevillage.org/",
+    "description": "A nonprofit network that provides volunteers and services (like home repairs and transportation) to help the elderly safely maintain shelter and age in their own homes."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Berea Health Care Center",
+    "link": "https://bereahealthcare.com/",
+    "description": "A senior living and rehabilitation complex offering elderly individuals specialized housing, medical care, and a safe shelter environment."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "The Terrace Nursing & Rehabilitation Center",
+    "link": "https://terrancenursing.com/",
+    "description": "A senior living facility in Berea providing dedicated housing, physical therapy, and long-term shelter for the elderly."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Kenwood Health And Rehabilitation Center",
+    "link": "https://kenwoodhealth.com/",
+    "description": "An elderly home in Madison County that provides senior living accommodations, grounds upkeep, and medical shelter for up to 93 residents."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "McCready Manor",
+    "link": "https://stdandrews.org/mccready-manor/",
+    "description": "An independent living and senior housing apartment complex in Richmond, offering a safe, community-focused shelter for older adults."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Arcadian Cove",
+    "link": "https://arcadiancove.com/",
+    "description": "A senior living and assisted living facility in Richmond providing secure housing, amenities, and daily care support."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Berea Police Department Transient Emergency Assistance",
+    "link": "https://bereaky.gov/government/city-departments/berea-police-department/",
+    "description": "Partnered with local outreach, the police department provides short-term emergency help and shelter connections for travelers facing breakdowns or crises."
+  },
+  {
+    "tags": ["shelter", "finearts/arts"],
+    "title": "Berea City Park",
+    "link": "https://bereaky.gov/government/city-departments/parks-recreation/parks-facilities/berea-city-park/",
+    "description": "A public park offering physical picnic shelters for community gatherings, as well as beautifully maintained recreational space that hosts local arts and craft fairs."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Memorial Park Berea",
+    "link": "https://bereaky.gov/government/city-departments/parks-recreation/parks-facilities/memorial-park/",
+    "description": "Berea's oldest park, featuring a large and small picnic shelter for public use, acting as a passive greenspace and community refuge."
+  },
+  {
+    "tags": ["shelter", "finearts/arts"],
+    "title": "Fort Boonesborough State Park",
+    "link": "https://parks.ky.gov/parks/find-a-park/fort-boonesborough-state-park",
+    "description": "Offers camping shelters and historic fort housing replicas (shelter), while serving as a hub for historic pioneer craft demonstrations and the Kentucky River Museum (arts)."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Union City Neighborhood Park",
+    "link": "https://madisoncountyky.gov/departments/parks-recreation/",
+    "description": "A local community park in Richmond providing a public pavilion/shelter, historical walking trails, and playgrounds for families."
+  },
+  {
+    "tags": ["shelter"],
+    "title": "Lake Reba Park",
+    "link": "https://richmond.ky.us/182/Lake-Reba-Park",
+    "description": "A massive 75-acre park complex featuring public picnic shelters, ADA-friendly kayak launches, and the Judy Rains Memorial Dog Park (a dedicated shelter/play space for pets)."
+  },
+  {
+    "tags": ["shelter", "finearts/arts"],
+    "title": "Irvine-McDowell Park",
+    "link": "https://richmond.ky.us/186/Irvine-McDowell-Park",
+    "description": "Provides shady picnic shelters and recreational areas, while also housing the Irvinton House Museum right inside the park (fine arts/history)."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "Kentucky Artisan Center at Berea",
+    "link": "https://www.kentuckyartisancenter.ky.gov/",
+    "description": "A premier state facility featuring the work of over 800 Kentucky artisans, showcasing everything from traditional woodwork and pottery to modern fine arts."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "Artisan Village (Old Town Berea)",
+    "link": "https://visitberea.com/artisan-village/",
+    "description": "The historic heart of Berea featuring cobblestone streets lined with working artist studios, galleries, and craft shops, cementing Berea's title as the Folk Arts and Crafts Capital."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "Top Drawer Gallery",
+    "link": "https://www.topdrawergallery.com/",
+    "description": "A curated art gallery in the Artisan Village offering fine handmade artistry in jewelry, glass, pottery, wood, and metal from over 80 regional artists."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "Berea College Doris Ulmann Galleries",
+    "link": "https://www.berea.edu/art/doris-ulmann-galleries",
+    "description": "A fine arts gallery on the Berea College campus hosting historical art collections, rotating student exhibitions, and regional cultural artifacts."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Log House Craft Gallery",
+    "link": "https://www.bereacollegecrafts.com/",
+    "description": "The oldest craft gallery in Kentucky, selling fine arts and crafts created directly by the students of Berea College's historic Student Craft program."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Russel Acton Folk Center",
+    "link": "https://bereaky.gov/government/city-departments/parks-recreation/parks-facilities/russel-acton-folk-center/",
+    "description": "A community facility dedicated to preserving and hosting folk arts, traditional dances, musical performances, and cultural gatherings."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "EKU Center for the Arts",
+    "link": "https://ekucenter.com/",
+    "description": "Central Kentucky's premier performing arts venue located in Richmond, hosting national Broadway tours, international ballets, and world-class musical concerts."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Richmond Area Arts Center",
+    "link": "https://richmondareaartscouncil.org/",
+    "description": "A cultural hub offering youth arts programs, adult creative workshops, and local art exhibits for the Madison County community."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Spotlight Playhouse",
+    "link": "https://thespotlightplayhouse.com/",
+    "description": "A highly active local community theater in Berea that produces plays, musicals, and performing arts education for local talent and audiences."
+  },
+  {
+    "tags":["finearts/arts", "nourishment"],
+    "title": "First Friday Berea",
+    "link": "https://www.facebook.com/FirstFridayBerea/",
+    "description": "A monthly community block party that heavily features local musicians, craft vendors (fine arts), and an array of local food trucks and farmers (nourishment)."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "Warren A. May Woodworker",
+    "link": "https://warrenamay.com/",
+    "description": "A renowned local studio in Berea where a master craftsman creates traditional Appalachian dulcimers and fine wood furniture."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Gastineau Studio",
+    "link": "https://visitberea.com/",
+    "description": "A staple of the Berea arts community offering high-quality, handcrafted jewelry and visual arts pieces made by resident artists."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Family Tree Gallery",
+    "link": "https://visitberea.com/",
+    "description": "Located on Broadway in Berea, this shop curates traditional Appalachian crafts, fine arts, and heritage goods from local creators."
+  },
+  {
+    "tags": ["finearts/arts"],
+    "title": "Appalachian Shakespeare Company",
+    "link": "https://english.eku.edu/appalachian-shakespeare-center",
+    "description": "A theatrical organization based at Eastern Kentucky University blending professional and amateur actors to bring the performing arts to the region."
+  },
+  {
+    "tags":["finearts/arts"],
+    "title": "Madison Community Band",
+    "link": "https://richmondchamber.com/",
+    "description": "An intergenerational musical ensemble that performs free concerts at local parks and community centers, fostering musical arts in Madison County."
+  }
+]
