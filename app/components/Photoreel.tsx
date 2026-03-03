@@ -143,15 +143,16 @@ export default function Photoreel() {
 
       {/* Section Label */}
       <motion.div
+        className="mb-8 md:mb-0"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="text-[#FF6B35] text-[17px] font-semibold mb-2" style={{ fontFamily: 'var(--font-mori)' }}>
+        <p className="text-[#FF6B35] text-xl md:text-2xl leading-tight mb-1" style={{ fontFamily: 'var(--font-mori)' }}>
           02
         </p>
-        <p className="text-white text-[17px] mb-6" style={{ fontFamily: 'var(--font-mori)' }}>
+        <p className="text-white text-xl md:text-2xl leading-tight mb-8" style={{ fontFamily: 'var(--font-mori)' }}>
           Take a gander
         </p>
       </motion.div>

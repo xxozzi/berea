@@ -128,7 +128,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="relative w-full bg-[#FAF9F6] py-16 md:py-24 lg:py-32">
-        <div className="grid grid-cols-12 gap-4 px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-12 gap-4 px-[100px]">
           {/* Left Column - Section Label & Description */}
           <div className="col-span-12 md:col-span-4 lg:col-span-3 flex flex-col justify-between min-h-[400px] md:min-h-[500px]">
             {/* Section Label */}
