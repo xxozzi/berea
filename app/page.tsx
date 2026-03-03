@@ -6,8 +6,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Photoreel from './components/Photoreel';
+import LoadingScreen from './components/LoadingScreen';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [startAnimations, setStartAnimations] = useState(false);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+    setStartAnimations(true);
+  };
   const line1 = [
     { text: 'Where', font: 'var(--font-mori)', italic: false },
     { text: 'art', font: 'var(--font-editorial)', italic: true },
@@ -31,8 +39,11 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+
+      <main className="min-h-screen">
+        <Navbar startAnimations={startAnimations} />
 
       {/* Hero Section */}
       <section id="hero" className="relative h-screen w-full overflow-hidden">
@@ -60,7 +71,7 @@ export default function Home() {
                     marginRight: '0.25em'
                   }}
                   initial={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
-                  animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                  animate={startAnimations ? { y: 0, opacity: 1, filter: 'blur(0px)' } : {}}
                   transition={{
                     duration: 3.0,
                     delay: 0.2 + index * 0.08,
@@ -81,7 +92,7 @@ export default function Home() {
                     marginRight: '0.25em'
                   }}
                   initial={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
-                  animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                  animate={startAnimations ? { y: 0, opacity: 1, filter: 'blur(0px)' } : {}}
                   transition={{
                     duration: 3.0,
                     delay: 0.2 + (line1.length + index) * 0.08,
@@ -98,7 +109,7 @@ export default function Home() {
           <motion.div
             className="col-span-12 md:col-span-4 lg:col-span-5 self-end pb-6 md:pb-8 lg:pb-10 flex justify-end items-center gap-2"
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={startAnimations ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-white text-xl md:text-2xl">Scroll Down</p>
@@ -109,7 +120,7 @@ export default function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="w-7 h-7 md:w-8 md:h-8"
-              animate={{ y: [-4, 4, -4] }}
+              animate={startAnimations ? { y: [-4, 4, -4] } : {}}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
@@ -433,6 +444,7 @@ export default function Home() {
         </motion.div>
       </footer>
     </main>
+    </>
   );
 }
 

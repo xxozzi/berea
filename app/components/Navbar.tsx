@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
-export default function Navbar({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
+export default function Navbar({ variant = 'light', startAnimations = true }: { variant?: 'light' | 'dark', startAnimations?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
   const pathname = usePathname();
@@ -57,7 +57,7 @@ export default function Navbar({ variant = 'light' }: { variant?: 'light' | 'dar
           {/* Logo */}
           <motion.div
             initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={startAnimations ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 1.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link href="/#hero" className="cursor-pointer">
@@ -79,7 +79,7 @@ export default function Navbar({ variant = 'light' }: { variant?: 'light' | 'dar
                 href={item.href}
                 className="hover:opacity-70 transition-opacity"
                 initial={{ y: -8, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                animate={startAnimations ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 1.2, delay: 0.2 + index * 0.06, ease: [0.16, 1, 0.3, 1] }}
               >
                 {item.label}
