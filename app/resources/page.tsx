@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Navbar from '../components/Navbar';
 
 interface Resource {
@@ -16,6 +17,7 @@ export default function Resources() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [resourcesData, setResourcesData] = useState<Resource[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const searchParams = useSearchParams();
 
   const headingSegments = [
     { text: 'Discover', color: '#000000' },
@@ -40,6 +42,14 @@ export default function Resources() {
         setIsLoading(false);
       });
   }, []);
+
+  // Apply tag filter from URL parameter
+  useEffect(() => {
+    const tagParam = searchParams.get('tag');
+    if (tagParam && resourcesData.length > 0) {
+      setSelectedTags([tagParam]);
+    }
+  }, [searchParams, resourcesData]);
 
   // Get all unique tags
   const allTags = useMemo(() => {

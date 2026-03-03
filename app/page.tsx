@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Photoreel from './components/Photoreel';
 
@@ -455,19 +456,22 @@ function ResourceGrid() {
       id: 1,
       title: 'Fine Arts',
       buttonText: 'VIEW RESOURCES →',
-      bgImage: '/images/finearts.png'
+      bgImage: '/images/finearts.png',
+      tag: 'finearts/arts'
     },
     {
       id: 2,
       title: 'Shelter',
       buttonText: 'VIEW RESOURCES →',
-      bgImage: '/images/shelter.png'
+      bgImage: '/images/shelter.png',
+      tag: 'shelter'
     },
     {
       id: 3,
       title: 'Nourishment',
       buttonText: 'VIEW RESOURCES →',
-      bgImage: '/images/nourishment.png'
+      bgImage: '/images/nourishment.png',
+      tag: 'nourishment'
     }
   ];
 
@@ -493,53 +497,57 @@ function ResourceGrid() {
         const isHovered = hoveredCard === card.id;
 
         return (
-          <motion.div
+          <Link
             key={card.id}
-            className="relative rounded-2xl overflow-hidden cursor-pointer h-[24rem] md:h-[36rem] bg-center bg-cover"
-            style={{
-              backgroundImage: `url(${card.bgImage})`
-            }}
-            onMouseEnter={() => !isMobile && setHoveredCard(card.id)}
-            onMouseLeave={() => !isMobile && setHoveredCard(null)}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.3 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            href={`/resources?tag=${encodeURIComponent(card.tag)}`}
           >
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <motion.div
+              className="relative rounded-2xl overflow-hidden cursor-pointer h-[24rem] md:h-[36rem] bg-center bg-cover"
+              style={{
+                backgroundImage: `url(${card.bgImage})`
+              }}
+              onMouseEnter={() => !isMobile && setHoveredCard(card.id)}
+              onMouseLeave={() => !isMobile && setHoveredCard(null)}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.3 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-            {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-              <h3
-                className="text-2xl md:text-3xl font-bold mb-4"
-                style={{ fontFamily: 'var(--font-mori)' }}
-              >
-                {card.title}
-              </h3>
-              <button
-                className="bg-white text-black uppercase text-xs md:text-sm font-medium tracking-wide px-6 py-3 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 flex items-center gap-2"
-                style={{ fontFamily: 'var(--font-mori)' }}
-              >
-                {card.buttonText.replace(' →', '')}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                <h3
+                  className="text-2xl md:text-3xl font-bold mb-4"
+                  style={{ fontFamily: 'var(--font-mori)' }}
                 >
-                  <path
-                    d="M4 12L12 4M12 4H6M12 4V10"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
-                  />
-                </svg>
-              </button>
-            </div>
-          </motion.div>
+                  {card.title}
+                </h3>
+                <button
+                  className="bg-white text-black uppercase text-xs md:text-sm font-medium tracking-wide px-6 py-3 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                  style={{ fontFamily: 'var(--font-mori)' }}
+                >
+                  {card.buttonText.replace(' →', '')}
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 12L12 4M12 4H6M12 4V10"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="square"
+                      strokeLinejoin="miter"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </Link>
         );
       })}
     </div>
